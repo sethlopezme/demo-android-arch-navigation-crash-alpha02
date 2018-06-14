@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/nav_graph"
+            app:startDestination="@id/nav_subgraph_one">
+
+    <action
+        android:id="@+id/global_action_to_subgraph_two"
+        app:clearTask="true"
+        app:destination="@+id/nav_subgraph_two"/>
+
+    <navigation
+        android:id="@+id/nav_subgraph_one"
+        app:startDestination="@+id/firstFragment">
+
+        <fragment
+            android:id="@+id/firstFragment"
+            android:name="com.test.test.FirstFragment"
+            android:label="FirstFragment"/>
+
+    </navigation>
+
+    <navigation
+        android:id="@+id/nav_subgraph_two"
+        app:startDestination="@+id/secondFragment">
+
+        <fragment
+            android:id="@+id/secondFragment"
+            android:name="com.test.test.SecondFragment"
+            android:label="SecondFragment">
+
+            <action
+                android:id="@+id/action_secondFragment_to_thirdFragment"
+                app:destination="@id/thirdFragment"/>
+
+        </fragment>
+
+        <fragment
+            android:id="@+id/thirdFragment"
+            android:name="com.test.test.ThirdFragment"
+            android:label="ThirdFragment"/>
+
+    </navigation>
+
+</navigation>
